@@ -11,16 +11,14 @@ export interface CalculationResponse {
     calculator_version: string;
     financial_year: string;
     inputs: Record<string, unknown>;
-    outputs: Record<string, number>;
-    breakdown: Array<{
-      slab: string;
-      amount_in_slab: number;
-      rate_percent: number;
-      tax: number;
-    }>;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    outputs: Record<string, any>;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    breakdown: Array<Record<string, any>>;
     assumptions: string[];
     formula_references: string[];
-    metadata: Record<string, unknown>;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    metadata: Record<string, any>;
   };
   errors?: string[];
 }

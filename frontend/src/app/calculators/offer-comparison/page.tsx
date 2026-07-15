@@ -28,7 +28,7 @@ export default function OfferComparisonPage() {
 
   const updateOffer = (idx: number, field: keyof Offer, value: string | boolean) => {
     const updated = [...offers];
-    (updated[idx] as Record<string, unknown>)[field] = value;
+    updated[idx] = { ...updated[idx], [field]: value };
     setOffers(updated);
   };
 
@@ -205,7 +205,7 @@ export default function OfferComparisonPage() {
                 <thead>
                   <tr className="border-b text-left">
                     <th className="pb-2 font-medium">Metric</th>
-                    {(result.data.outputs.comparison as Record<string, unknown>[]).map((c: Record<string, unknown>, i: number) => (
+                    {(result.data.outputs.comparison as Record<string, unknown>[]).map((c, i) => (
                       <th key={i} className="pb-2 font-medium text-right">{String(c.name)}</th>
                     ))}
                   </tr>
@@ -223,7 +223,7 @@ export default function OfferComparisonPage() {
                   ].map((metric) => (
                     <tr key={metric.key} className="border-b last:border-0">
                       <td className="py-2 font-medium">{metric.label}</td>
-                      {(result.data!.outputs.comparison as Record<string, unknown>[]).map((c: Record<string, unknown>, i: number) => {
+                      {(result.data!.outputs.comparison as Record<string, unknown>[]).map((c, i) => {
                         const val = Number(c[metric.key]);
                         const isNeg = val < 0;
                         const isBest = metric.key === "fixed_take_home_monthly" && i === 0;
