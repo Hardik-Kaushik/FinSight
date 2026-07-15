@@ -2,7 +2,7 @@
  * Market Dashboard API client.
  */
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "";
 
 export interface StockEntry {
   symbol: string;
@@ -39,7 +39,7 @@ export interface MarketDashboard {
 
 export async function fetchMarketDashboard(): Promise<MarketDashboard | null> {
   try {
-    const res = await fetch(`${API_BASE}/api/v1/market/dashboard`);
+    const res = await fetch(`${API_BASE}/api/backend/api/v1/market/dashboard`);
     if (!res.ok) return null;
     return res.json();
   } catch {
@@ -55,7 +55,7 @@ export interface StockDetail extends StockEntry {
 
 export async function fetchStockDetail(symbol: string): Promise<StockDetail | null> {
   try {
-    const res = await fetch(`${API_BASE}/api/v1/market/stock/${symbol}`);
+    const res = await fetch(`${API_BASE}/api/backend/api/v1/market/stock/${symbol}`);
     if (!res.ok) return null;
     const data = await res.json();
     if (data.error) return null;

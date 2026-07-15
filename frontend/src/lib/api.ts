@@ -2,7 +2,7 @@
  * API client for ProjectFinanceHub AI backend.
  */
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "";
 
 export interface CalculationResponse {
   success: boolean;
@@ -31,7 +31,7 @@ export async function calculate(
   financialYear: string
 ): Promise<CalculationResponse> {
   const res = await fetch(
-    `${API_BASE}/api/v1/calculators/${calculatorId}/calculate`,
+    `${API_BASE}/api/backend/api/v1/calculators/${calculatorId}/calculate`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -47,7 +47,7 @@ export async function calculate(
 }
 
 export async function listCalculators() {
-  const res = await fetch(`${API_BASE}/api/v1/calculators/`);
+  const res = await fetch(`${API_BASE}/api/backend/api/v1/calculators/`);
   if (!res.ok) throw new Error(`API error: ${res.status}`);
   return res.json();
 }
