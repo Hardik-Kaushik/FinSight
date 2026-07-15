@@ -1,0 +1,197 @@
+{
+  "financial_year": "2024-25",
+  "last_updated": "2024-07-01",
+  "provident_fund": {
+    "employee_contribution_percent": 12,
+    "employer_contribution_percent": 12,
+    "employer_eps_percent": 8.33,
+    "employer_epf_percent": 3.67,
+    "pf_wage_ceiling": 15000,
+    "admin_charges_percent": 0.5,
+    "edli_percent": 0.5,
+    "voluntary_pf_allowed": true,
+    "notes": "PF is mandatory if basic <= 15000/month. Many companies apply PF on full basic."
+  },
+  "hra": {
+    "metro_cities": ["delhi", "mumbai", "kolkata", "chennai", "bangalore", "hyderabad", "gurugram", "noida", "pune", "ahmedabad"],
+    "metro_percent_of_basic": 50,
+    "non_metro_percent_of_basic": 40,
+    "exemption_rules": {
+      "rule_1": "Actual HRA received",
+      "rule_2": "Rent paid minus 10% of basic+DA",
+      "rule_3": "50% of basic+DA (metro) or 40% (non-metro)"
+    }
+  },
+  "professional_tax": {
+    "max_annual": 2500,
+    "states": {
+      "haryana": {
+        "slabs": [
+          { "from": 0, "to": null, "monthly": 0 }
+        ],
+        "notes": "Haryana does NOT levy professional tax. Gurugram/Faridabad employees pay ₹0."
+      },
+      "delhi": {
+        "slabs": [
+          { "from": 0, "to": null, "monthly": 0 }
+        ],
+        "notes": "Delhi does NOT levy professional tax."
+      },
+      "uttar_pradesh": {
+        "slabs": [
+          { "from": 0, "to": null, "monthly": 0 }
+        ],
+        "notes": "UP (Noida/Lucknow) does NOT levy professional tax."
+      },
+      "rajasthan": {
+        "slabs": [
+          { "from": 0, "to": null, "monthly": 0 }
+        ],
+        "notes": "Rajasthan (Jaipur) does NOT levy professional tax."
+      },
+      "maharashtra": {
+        "slabs": [
+          { "from": 0, "to": 7500, "monthly": 0 },
+          { "from": 7501, "to": 10000, "monthly": 175 },
+          { "from": 10001, "to": null, "monthly": 200 }
+        ],
+        "feb_adjustment": 300,
+        "notes": "Covers Mumbai, Pune, Nagpur. Feb month PT is ₹300 for highest slab."
+      },
+      "karnataka": {
+        "slabs": [
+          { "from": 0, "to": 15000, "monthly": 0 },
+          { "from": 15001, "to": 25000, "monthly": 200 },
+          { "from": 25001, "to": null, "monthly": 200 }
+        ],
+        "notes": "Covers Bangalore, Mysore."
+      },
+      "telangana": {
+        "slabs": [
+          { "from": 0, "to": 15000, "monthly": 0 },
+          { "from": 15001, "to": 20000, "monthly": 150 },
+          { "from": 20001, "to": null, "monthly": 200 }
+        ],
+        "notes": "Covers Hyderabad."
+      },
+      "andhra_pradesh": {
+        "slabs": [
+          { "from": 0, "to": 15000, "monthly": 0 },
+          { "from": 15001, "to": 20000, "monthly": 150 },
+          { "from": 20001, "to": null, "monthly": 200 }
+        ],
+        "notes": "Covers Visakhapatnam, Vijayawada."
+      },
+      "tamil_nadu": {
+        "slabs": [
+          { "from": 0, "to": 21000, "monthly": 0 },
+          { "from": 21001, "to": 30000, "monthly": 135 },
+          { "from": 30001, "to": 45000, "monthly": 315 },
+          { "from": 45001, "to": 60000, "monthly": 690 },
+          { "from": 60001, "to": 75000, "monthly": 1025 },
+          { "from": 75001, "to": null, "monthly": 1250 }
+        ],
+        "notes": "Covers Chennai, Coimbatore. Half-yearly payment. Monthly shown as equivalent."
+      },
+      "west_bengal": {
+        "slabs": [
+          { "from": 0, "to": 10000, "monthly": 0 },
+          { "from": 10001, "to": 15000, "monthly": 110 },
+          { "from": 15001, "to": 25000, "monthly": 130 },
+          { "from": 25001, "to": 40000, "monthly": 150 },
+          { "from": 40001, "to": null, "monthly": 200 }
+        ],
+        "notes": "Covers Kolkata."
+      },
+      "gujarat": {
+        "slabs": [
+          { "from": 0, "to": 5999, "monthly": 0 },
+          { "from": 6000, "to": 8999, "monthly": 80 },
+          { "from": 9000, "to": 11999, "monthly": 150 },
+          { "from": 12000, "to": null, "monthly": 200 }
+        ],
+        "notes": "Covers Ahmedabad, Surat, Vadodara."
+      },
+      "madhya_pradesh": {
+        "slabs": [
+          { "from": 0, "to": 18750, "monthly": 0 },
+          { "from": 18751, "to": 25000, "monthly": 125 },
+          { "from": 25001, "to": 33333, "monthly": 166 },
+          { "from": 33334, "to": null, "monthly": 208 }
+        ],
+        "notes": "Covers Indore, Bhopal. PT is levied annually; monthly equivalent shown."
+      },
+      "odisha": {
+        "slabs": [
+          { "from": 0, "to": 13304, "monthly": 0 },
+          { "from": 13305, "to": 25000, "monthly": 125 },
+          { "from": 25001, "to": null, "monthly": 200 }
+        ],
+        "notes": "Covers Bhubaneswar."
+      },
+      "assam": {
+        "slabs": [
+          { "from": 0, "to": 10000, "monthly": 0 },
+          { "from": 10001, "to": 15000, "monthly": 150 },
+          { "from": 15001, "to": 25000, "monthly": 180 },
+          { "from": 25001, "to": null, "monthly": 208 }
+        ],
+        "notes": "Covers Guwahati."
+      },
+      "kerala": {
+        "slabs": [
+          { "from": 0, "to": 11999, "monthly": 0 },
+          { "from": 12000, "to": 17999, "monthly": 120 },
+          { "from": 18000, "to": 29999, "monthly": 180 },
+          { "from": 30000, "to": null, "monthly": 208 }
+        ],
+        "notes": "Covers Kochi, Thiruvananthapuram. Half-yearly; monthly equivalent shown."
+      },
+      "jharkhand": {
+        "slabs": [
+          { "from": 0, "to": 25000, "monthly": 0 },
+          { "from": 25001, "to": 41666, "monthly": 100 },
+          { "from": 41667, "to": 66666, "monthly": 150 },
+          { "from": 66667, "to": 83333, "monthly": 175 },
+          { "from": 83334, "to": null, "monthly": 208 }
+        ],
+        "notes": "Covers Jamshedpur, Ranchi."
+      },
+      "punjab": {
+        "slabs": [
+          { "from": 0, "to": null, "monthly": 0 }
+        ],
+        "notes": "Punjab (Chandigarh/Mohali) does NOT levy professional tax."
+      },
+      "default": {
+        "slabs": [
+          { "from": 0, "to": 15000, "monthly": 0 },
+          { "from": 15001, "to": null, "monthly": 200 }
+        ],
+        "notes": "Fallback for states not explicitly configured."
+      }
+    }
+  },
+  "gratuity": {
+    "eligible_after_years": 5,
+    "formula": "(last_basic * 15 * years_of_service) / 26",
+    "max_gratuity": 2000000,
+    "notes": "Applicable after 5 years of continuous service"
+  },
+  "standard_deduction": {
+    "new_regime": 75000,
+    "old_regime": 50000
+  },
+  "typical_ctc_components": {
+    "basic_percent_of_ctc": [40, 50],
+    "hra_percent_of_basic": [40, 50],
+    "special_allowance": "balancing_component",
+    "notes": "Basic is typically 40-50% of CTC. HRA is 40-50% of basic depending on metro/non-metro."
+  },
+  "employer_contributions": {
+    "pf_employer": "12% of basic (capped at 15000 or full basic depending on company policy)",
+    "gratuity_employer": "4.81% of basic (approximate annual provisioning)",
+    "insurance_group": "varies by company",
+    "notes": "These are part of CTC but not part of gross salary"
+  }
+}

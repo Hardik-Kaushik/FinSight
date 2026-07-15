@@ -1,0 +1,46 @@
+{
+  "financial_year": "2024-25",
+  "last_updated": "2024-07-01",
+  "sip": {
+    "description": "Systematic Investment Plan calculator assumptions",
+    "compounding": "monthly",
+    "default_annual_return_percent": 12,
+    "typical_returns": {
+      "large_cap": { "conservative": 10, "moderate": 12, "aggressive": 14 },
+      "mid_cap": { "conservative": 12, "moderate": 15, "aggressive": 18 },
+      "small_cap": { "conservative": 14, "moderate": 18, "aggressive": 22 },
+      "index_fund_nifty50": { "conservative": 10, "moderate": 12, "aggressive": 14 },
+      "debt_fund": { "conservative": 6, "moderate": 7, "aggressive": 8 },
+      "hybrid_fund": { "conservative": 8, "moderate": 10, "aggressive": 12 }
+    },
+    "step_up_sip": {
+      "description": "Annual increase in SIP amount",
+      "typical_percent": [5, 10, 15, 20]
+    },
+    "taxation": {
+      "ltcg_threshold": 125000,
+      "ltcg_rate_percent": 12.5,
+      "stcg_rate_percent": 20,
+      "holding_period_months_equity": 12,
+      "holding_period_months_debt": 36,
+      "notes": "As per Finance Act 2024 - LTCG above ₹1.25L taxed at 12.5%"
+    }
+  },
+  "stock_indices": {
+    "nifty_50": {
+      "10_year_cagr": 12.1,
+      "5_year_cagr": 14.8,
+      "3_year_cagr": 15.2
+    },
+    "sensex": {
+      "10_year_cagr": 12.4,
+      "5_year_cagr": 14.5,
+      "3_year_cagr": 14.9
+    },
+    "nifty_midcap_150": {
+      "10_year_cagr": 16.2,
+      "5_year_cagr": 22.1,
+      "3_year_cagr": 24.5
+    }
+  }
+}
