@@ -1,8 +1,26 @@
 /**
- * API client for ProjectFinanceHub AI backend.
+ * API client for FinSight backend.
+ * Includes retry logic for Render free tier cold starts (30-50s spin-up).
  */
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
+async function fetchWithRetry(url: string, options?: RequestInit, retries = 2): Promise<Response> {
+  for (let i = 0; i <= retries; i++) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 45000); // 45s timeout
+      const res = await fetch(url, { ...options, signal: controller.signal });
+      clearTimeout(timeout);
+      return res;
+    } catch (err) {
+      if (i === retries) throw err;
+      // Wait 2s before retry (server is spinning up)
+      await new Promise((r) => setTimeout(r, 2000));
+    }
+  }
+  throw new Error("Request failed after retries");
+}
 
 export interface CalculationResponse {
   success: boolean;
@@ -28,7 +46,7 @@ export async function calculate(
   inputs: Record<string, unknown>,
   financialYear: string
 ): Promise<CalculationResponse> {
-  const res = await fetch(
+  const res = await fetchWithRetry(
     `${API_BASE}/api/v1/calculators/${calculatorId}/calculate`,
     {
       method: "POST",
@@ -45,7 +63,7 @@ export async function calculate(
 }
 
 export async function listCalculators() {
-  const res = await fetch(`${API_BASE}/api/v1/calculators/`);
+  const res = await fetchWithRetry(`${API_BASE}/api/v1/calculators/`);
   if (!res.ok) throw new Error(`API error: ${res.status}`);
   return res.json();
 }
