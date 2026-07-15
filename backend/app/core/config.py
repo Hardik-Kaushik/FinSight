@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     rules_config_path: str = "rules_config"
 
     # CORS
-    cors_origins: list[str] = ["http://localhost:3000"]
+    cors_origins: list[str] = ["http://localhost:3000", "https://finsight-bay.vercel.app"]
 
     class Config:
         env_file = ".env"
