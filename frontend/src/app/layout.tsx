@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
 
 export const metadata: Metadata = {
   title: "FinSight - Smart Personal Finance for India",
@@ -12,9 +15,31 @@ export const metadata: Metadata = {
     "ctc calculator",
     "sip calculator",
     "salary breakup",
+    "ctc to in-hand salary",
+    "new regime vs old regime",
+    "offer comparison calculator",
   ],
   icons: {
     icon: "/icon.svg",
+  },
+  metadataBase: new URL("https://finsight-bay.vercel.app"),
+  openGraph: {
+    title: "FinSight - Smart Personal Finance for India",
+    description: "Free income tax, CTC, SIP calculators with live NSE market data. Built for India.",
+    url: "https://finsight-bay.vercel.app",
+    siteName: "FinSight",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FinSight - Smart Finance Calculators for India",
+    description: "Free income tax, CTC, SIP calculators with live NSE market data.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
   },
 };
 
@@ -32,6 +57,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics */}
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
+      </head>
       <body className="min-h-screen bg-gray-50 text-gray-900 antialiased flex flex-col">
         <header className="sticky top-0 z-40 border-b bg-white/95 backdrop-blur-sm shadow-sm">
           <nav className="mx-auto max-w-7xl px-3 py-3 sm:px-6 lg:px-8">
