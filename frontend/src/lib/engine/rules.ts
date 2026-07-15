@@ -1,0 +1,51 @@
+/**
+ * Rules engine - inline JSON rules for Vercel serverless (no filesystem access needed).
+ */
+
+export const incomeTaxRules = {
+  financial_year: "2024-25",
+  regimes: {
+    new: {
+      name: "New Tax Regime (Default)",
+      slabs: [
+        { from: 0, to: 300000, rate: 0 },
+        { from: 300001, to: 700000, rate: 5 },
+        { from: 700001, to: 1000000, rate: 10 },
+        { from: 1000001, to: 1200000, rate: 15 },
+        { from: 1200001, to: 1500000, rate: 20 },
+        { from: 1500001, to: null, rate: 30 },
+      ],
+      standard_deduction: 75000,
+      rebate_87a_limit: 700000,
+      rebate_87a_max: 25000,
+      surcharge_slabs: [
+        { from: 0, to: 5000000, rate: 0 },
+        { from: 5000001, to: 10000000, rate: 10 },
+        { from: 10000001, to: 20000000, rate: 15 },
+        { from: 20000001, to: null, rate: 25 },
+      ],
+      cess_rate: 4,
+    },
+    old: {
+      name: "Old Tax Regime",
+      slabs: [
+        { from: 0, to: 250000, rate: 0 },
+        { from: 250001, to: 500000, rate: 5 },
+        { from: 500001, to: 1000000, rate: 20 },
+        { from: 1000001, to: null, rate: 30 },
+      ],
+      standard_deduction: 50000,
+      rebate_87a_limit: 500000,
+      rebate_87a_max: 12500,
+      section_80c_limit: 150000,
+      section_80d_limit_self: 25000,
+      surcharge_slabs: [
+        { from: 0, to: 5000000, rate: 0 },
+        { from: 5000001, to: 10000000, rate: 10 },
+        { from: 10000001, to: 20000000, rate: 15 },
+        { from: 20000001, to: null, rate: 37 },
+      ],
+      cess_rate: 4,
+    },
+  },
+};

@@ -1,24 +1,7 @@
 /**
  * Market Dashboard API client.
+ * Calls Next.js API routes (same domain).
  */
-
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-
-async function fetchWithRetry(url: string, retries = 2): Promise<Response> {
-  for (let i = 0; i <= retries; i++) {
-    try {
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 50000);
-      const res = await fetch(url, { signal: controller.signal });
-      clearTimeout(timeout);
-      return res;
-    } catch (err) {
-      if (i === retries) throw err;
-      await new Promise((r) => setTimeout(r, 2000));
-    }
-  }
-  throw new Error("Request failed after retries");
-}
 
 export interface StockEntry {
   symbol: string;
@@ -55,7 +38,7 @@ export interface MarketDashboard {
 
 export async function fetchMarketDashboard(): Promise<MarketDashboard | null> {
   try {
-    const res = await fetchWithRetry(`${API_BASE}/api/v1/market/dashboard`);
+    const res = await fetch("/api/v1/market/dashboard");
     if (!res.ok) return null;
     return res.json();
   } catch {
@@ -71,7 +54,7 @@ export interface StockDetail extends StockEntry {
 
 export async function fetchStockDetail(symbol: string): Promise<StockDetail | null> {
   try {
-    const res = await fetchWithRetry(`${API_BASE}/api/v1/market/stock/${symbol}`);
+    const res = await fetch(`/api/v1/market/stock/${symbol}`);
     if (!res.ok) return null;
     const data = await res.json();
     if (data.error) return null;
