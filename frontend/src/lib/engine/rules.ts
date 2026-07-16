@@ -3,7 +3,7 @@
  */
 
 export const incomeTaxRules = {
-  financial_year: "2024-25",
+  financial_year: "2026-27",
   regimes: {
     new: {
       name: "New Tax Regime (Default)",

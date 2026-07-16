@@ -3,7 +3,7 @@ import { CalculatorPlugin } from "../registry";
 export const sipCalculator: CalculatorPlugin = {
   id: "sip_calculator", name: "SIP Returns Calculator",
   description: "Project wealth growth with SIP investments, step-up, and LTCG estimation.",
-  version: "1.0.0", supportedFinancialYears: ["2024-25"],
+  version: "1.0.0", supportedFinancialYears: ["2026-27", "2025-26", "2024-25"],
 
   validate(inputs) {
     const errors: string[] = [];

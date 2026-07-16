@@ -40,7 +40,7 @@ class InHandSalaryCalculator(BaseCalculator):
 
     @property
     def supported_financial_years(self) -> list[str]:
-        return ["2024-25"]
+        return ["2026-27"]
 
     def get_input_schema(self) -> dict[str, Any]:
         return {
@@ -51,7 +51,7 @@ class InHandSalaryCalculator(BaseCalculator):
                 "hra_monthly": {"type": "number", "minimum": 0, "description": "Monthly HRA"},
                 "special_allowance_monthly": {"type": "number", "minimum": 0, "default": 0},
                 "other_allowances_monthly": {"type": "number", "minimum": 0, "default": 0},
-                "financial_year": {"type": "string", "enum": ["2024-25"]},
+                "financial_year": {"type": "string", "enum": ["2026-27"]},
                 "pf_on_full_basic": {"type": "boolean", "default": False},
                 "rent_paid_monthly": {"type": "number", "minimum": 0, "default": 0, "description": "Monthly rent for HRA exemption"},
                 "is_metro": {"type": "boolean", "default": True},

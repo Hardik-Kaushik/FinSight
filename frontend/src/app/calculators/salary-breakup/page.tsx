@@ -24,14 +24,14 @@ export default function SalaryBreakupPage() {
       const inputs: Record<string, unknown> = {
         amount: Number(amount),
         amount_type: amountType,
-        financial_year: "2024-25",
+        financial_year: "2026-27",
         basic_percent: Number(basicPercent),
         hra_percent_of_basic: Number(hraPercent),
         pf_on_full_basic: pfOnFullBasic,
         state,
       };
 
-      const response = await calculate("salary_breakup", inputs, "2024-25");
+      const response = await calculate("salary_breakup", inputs, "2026-27");
       setResult(response);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Calculation failed");

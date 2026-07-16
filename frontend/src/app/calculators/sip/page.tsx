@@ -28,10 +28,10 @@ export default function SIPCalculatorPage() {
         step_up_percent: Number(stepUp),
         lump_sum: Number(lumpSum) || 0,
         fund_category: fundCategory,
-        financial_year: "2024-25",
+        financial_year: "2026-27",
       };
 
-      const response = await calculate("sip_calculator", inputs, "2024-25");
+      const response = await calculate("sip_calculator", inputs, "2026-27");
       setResult(response);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Calculation failed");

@@ -4,7 +4,7 @@ import { getPfContribution, getProfessionalTax } from "../salary-rules";
 export const inhandSalaryCalculator: CalculatorPlugin = {
   id: "inhand_salary", name: "In-Hand Salary Calculator",
   description: "Calculate actual monthly in-hand salary from components after PF, PT, TDS.",
-  version: "1.0.0", supportedFinancialYears: ["2024-25"],
+  version: "1.0.0", supportedFinancialYears: ["2026-27", "2025-26", "2024-25"],
 
   validate(inputs) {
     const errors: string[] = [];

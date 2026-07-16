@@ -39,7 +39,7 @@ class SalaryBreakupCalculator(BaseCalculator):
 
     @property
     def supported_financial_years(self) -> list[str]:
-        return ["2024-25"]
+        return ["2026-27"]
 
     def get_input_schema(self) -> dict[str, Any]:
         return {
@@ -48,7 +48,7 @@ class SalaryBreakupCalculator(BaseCalculator):
             "properties": {
                 "amount": {"type": "number", "minimum": 0, "description": "Annual amount in INR"},
                 "amount_type": {"type": "string", "enum": ["ctc", "gross"], "description": "Whether amount is CTC or Gross"},
-                "financial_year": {"type": "string", "enum": ["2024-25"]},
+                "financial_year": {"type": "string", "enum": ["2026-27"]},
                 "basic_percent": {"type": "number", "minimum": 20, "maximum": 60, "default": 40},
                 "hra_percent_of_basic": {"type": "number", "minimum": 0, "maximum": 100, "default": 50},
                 "pf_on_full_basic": {"type": "boolean", "default": False},

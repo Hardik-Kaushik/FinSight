@@ -6,7 +6,7 @@ export const ctcCalculator: CalculatorPlugin = {
   name: "CTC Calculator",
   description: "Break down your CTC into gross salary, deductions, and in-hand salary.",
   version: "1.0.0",
-  supportedFinancialYears: ["2024-25"],
+  supportedFinancialYears: ["2026-27", "2025-26", "2024-25"],
 
   validate(inputs) {
     const errors: string[] = [];

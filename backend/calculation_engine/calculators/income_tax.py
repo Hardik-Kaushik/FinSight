@@ -41,7 +41,7 @@ class IncomeTaxCalculator(BaseCalculator):
 
     @property
     def supported_financial_years(self) -> list[str]:
-        return ["2024-25"]
+        return ["2026-2027"]
 
     def get_input_schema(self) -> dict[str, Any]:
         return {
@@ -55,7 +55,7 @@ class IncomeTaxCalculator(BaseCalculator):
                 },
                 "financial_year": {
                     "type": "string",
-                    "enum": ["2024-25"],
+                    "enum": ["2026-2027"],
                     "description": "Financial year for tax computation",
                 },
                 "regime": {
@@ -136,7 +136,7 @@ class IncomeTaxCalculator(BaseCalculator):
 
         Args:
             inputs: Validated input parameters.
-            financial_year: Financial year string (e.g., "2024-25").
+            financial_year: Financial year string (e.g., "2026-27").
             rules_engine: Optional RulesEngine instance for loading rules.
             rules: Optional pre-loaded rules dict (for testing).
         """

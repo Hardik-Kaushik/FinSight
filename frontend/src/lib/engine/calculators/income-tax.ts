@@ -6,7 +6,7 @@ export const incomeTaxCalculator: CalculatorPlugin = {
   name: "Income Tax Calculator (India)",
   description: "Calculate Indian income tax under both Old and New regimes with full slab breakdown, surcharge, and cess.",
   version: "1.0.0",
-  supportedFinancialYears: ["2024-25"],
+  supportedFinancialYears: ["2026-27", "2025-26", "2024-25"],
 
   validate(inputs) {
     const errors: string[] = [];

@@ -57,11 +57,11 @@ export default function OfferComparisonPage() {
 
       const inputs: Record<string, unknown> = {
         offers: formattedOffers,
-        financial_year: "2024-25",
+        financial_year: "2026-27",
         state,
       };
 
-      const response = await calculate("offer_comparison", inputs, "2024-25");
+      const response = await calculate("offer_comparison", inputs, "2026-27");
       setResult(response);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Calculation failed");

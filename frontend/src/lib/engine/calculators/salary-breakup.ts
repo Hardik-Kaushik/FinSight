@@ -4,7 +4,7 @@ import { getPfContribution, getProfessionalTax } from "../salary-rules";
 export const salaryBreakupCalculator: CalculatorPlugin = {
   id: "salary_breakup", name: "Salary Breakup Calculator",
   description: "Generate a detailed salary structure from CTC or gross salary.",
-  version: "1.0.0", supportedFinancialYears: ["2024-25"],
+  version: "1.0.0", supportedFinancialYears: ["2026-27", "2025-26", "2024-25"],
 
   validate(inputs) {
     const errors: string[] = [];

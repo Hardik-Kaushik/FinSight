@@ -22,7 +22,7 @@ export default function IncrementCalculatorPage() {
     try {
       const inputs: Record<string, unknown> = {
         current_ctc: Number(currentCtc),
-        financial_year: "2024-25",
+        financial_year: "2026-27",
         pf_on_full_basic: pfOnFullBasic,
       };
 
@@ -32,7 +32,7 @@ export default function IncrementCalculatorPage() {
         inputs.new_ctc = Number(newCtc);
       }
 
-      const response = await calculate("increment_calculator", inputs, "2024-25");
+      const response = await calculate("increment_calculator", inputs, "2026-27");
       setResult(response);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Calculation failed");

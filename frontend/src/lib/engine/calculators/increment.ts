@@ -18,7 +18,7 @@ function computeInhand(ctc: number, inputs: Record<string, unknown>) {
 export const incrementCalculator: CalculatorPlugin = {
   id: "increment_calculator", name: "Increment / Hike Calculator",
   description: "Calculate the real impact of a salary hike on your in-hand salary.",
-  version: "1.0.0", supportedFinancialYears: ["2024-25"],
+  version: "1.0.0", supportedFinancialYears: ["2026-27", "2025-26", "2024-25"],
 
   validate(inputs) {
     const errors: string[] = [];

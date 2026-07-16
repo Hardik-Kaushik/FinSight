@@ -4,7 +4,7 @@ import { getPfContribution, getProfessionalTax } from "../salary-rules";
 export const offerComparisonCalculator: CalculatorPlugin = {
   id: "offer_comparison", name: "Offer Comparison Calculator",
   description: "Compare job offers on actual in-hand salary.",
-  version: "1.0.0", supportedFinancialYears: ["2024-25"],
+  version: "1.0.0", supportedFinancialYears: ["2026-27", "2025-26", "2024-25"],
 
   validate(inputs) {
     const errors: string[] = [];

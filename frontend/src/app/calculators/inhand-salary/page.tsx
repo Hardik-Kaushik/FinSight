@@ -29,7 +29,7 @@ export default function InHandSalaryPage() {
         hra_monthly: Number(hraMonthly),
         special_allowance_monthly: Number(specialAllowance) || 0,
         other_allowances_monthly: Number(otherAllowances) || 0,
-        financial_year: "2024-25",
+        financial_year: "2026-27",
         pf_on_full_basic: pfOnFullBasic,
         is_metro: isMetro,
         state,
@@ -37,7 +37,7 @@ export default function InHandSalaryPage() {
       if (rentPaid) inputs.rent_paid_monthly = Number(rentPaid);
       if (monthlyTds) inputs.monthly_tds = Number(monthlyTds);
 
-      const response = await calculate("inhand_salary", inputs, "2024-25");
+      const response = await calculate("inhand_salary", inputs, "2026-27");
       setResult(response);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Calculation failed");

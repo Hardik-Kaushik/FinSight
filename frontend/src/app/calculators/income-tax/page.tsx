@@ -22,7 +22,7 @@ export default function IncomeTaxCalculatorPage() {
     try {
       const inputs: Record<string, unknown> = {
         gross_income: Number(grossIncome),
-        financial_year: "2024-25",
+        financial_year: "2026-27",
         regime,
       };
 
@@ -32,7 +32,7 @@ export default function IncomeTaxCalculatorPage() {
         if (hraExemption) inputs.hra_exemption = Number(hraExemption);
       }
 
-      const response = await calculate("income_tax_india", inputs, "2024-25");
+      const response = await calculate("income_tax_india", inputs, "2026-27");
       setResult(response);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Calculation failed");
@@ -46,7 +46,7 @@ export default function IncomeTaxCalculatorPage() {
       <div>
         <h1 className="text-3xl font-bold">Income Tax Calculator</h1>
         <p className="mt-2 text-gray-600">
-          FY 2024-25 | Compare Old vs New Tax Regime
+          FY 2026-27 | Compare Old vs New Tax Regime
         </p>
       </div>
 
