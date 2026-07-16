@@ -21,7 +21,7 @@ export default function HomePage() {
         <div className="grid gap-3 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           <CalculatorCard
             title="Income Tax"
-            description="Calculate your income tax under Old and New regimes for FY 2024-25. Compare and optimize."
+            description="Calculate your income tax under Old and New regimes for FY 2026-27. Compare and optimize."
             href="/calculators/income-tax"
             badge="Live"
           />
